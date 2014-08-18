@@ -1,3 +1,5 @@
+package rationals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,7 +38,7 @@ public class TestExtendedRational {
     ExtendedRational a, b;
     a = ExtendedRational.ofLongs(12, 8);
     b = ExtendedRational.ofLongs(-54, 12);
-    Assert.assertEquals("-3/1", a.plus(b).toString());
+    Assert.assertEquals("-3", a.plus(b).toString());
 
     b = ExtendedRational.ofLongs(1, 0);
     Assert.assertEquals("Infinity", a.plus(b).toString());
@@ -60,7 +62,7 @@ public class TestExtendedRational {
     a = ExtendedRational.ofString("5/2");
     b = ExtendedRational.ofString("3/2");
 
-    Assert.assertEquals("1/1", a.minus(b).toString());
+    Assert.assertEquals("1", a.minus(b).toString());
   }
 
   @Test public void testMultiplication() {
@@ -82,15 +84,15 @@ public class TestExtendedRational {
     ExtendedRational a, b;
     a = ExtendedRational.ofString("2/4");
     b = ExtendedRational.ofString("1/4");
-    Assert.assertEquals("2/1", a.divides(b).toString());
+    Assert.assertEquals("2", a.divides(b).toString());
 
     a = ExtendedRational.ofString("234234");
     b = ExtendedRational.INFTY;
-    Assert.assertEquals("0/1", a.divides(b).toString());
+    Assert.assertEquals("0", a.divides(b).toString());
 
     a = ExtendedRational.ofString("234234");
     b = ExtendedRational.NEG_INFTY;
-    Assert.assertEquals("0/1", a.divides(b).toString());
+    Assert.assertEquals("0", a.divides(b).toString());
 
     a = ExtendedRational.ofString("234234");
     b = ExtendedRational.NaN;
